@@ -735,7 +735,7 @@ class Resource(object):
             if not getattr(field_object, 'is_m2m', False):
                 continue
 
-            if field_object.attribute:
+            if field_object.attribute and field_name in bundle.data::
                 # Note that we only hydrate the data, leaving the instance
                 # unmodified. It's up to the user's code to handle this.
                 # The ``ModelResource`` provides a working baseline
